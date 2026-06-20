@@ -58,6 +58,14 @@ public class Restaurante {
         System.out.println("Reserva nao encontrada para " + nomeCliente);
     }
 
+    public void removerDaFila(String nome) {
+        if (filaEspera.remover(nome)) {
+            System.out.println("Cliente '" + nome + "' removido da fila.");
+        } else {
+            System.out.println("Cliente '" + nome + "' nao encontrado na fila.");
+        }
+    }
+
     public void listarFila() {
         filaEspera.listar();
     }

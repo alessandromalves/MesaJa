@@ -4,6 +4,7 @@ import java.util.ArrayList;
 interface Filavel {
     void entrar(Cliente cliente) throws ClienteJaExisteException;
     Cliente chamarProximo() throws FilaVaziaException;
+    boolean remover(String nome);
     void listar();
     int tamanho();
 }
@@ -42,6 +43,17 @@ public class Fila implements Filavel {
             fila.add(cliente);
             System.out.println("Cliente adicionado no final da fila. Posicao: " + fila.size());
         }
+    }
+
+    @Override
+    public boolean remover(String nome) {
+        for (int i = 0; i < fila.size(); i++) {
+            if (fila.get(i).getNome().equalsIgnoreCase(nome)) {
+                fila.remove(i);
+                return true;
+            }
+        }
+        return false;
     }
 
     @Override

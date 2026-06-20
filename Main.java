@@ -28,6 +28,7 @@ public class Main {
             System.out.println("5 - Fazer reserva");
             System.out.println("6 - Confirmar reserva");
             System.out.println("7 - Listar reservas");
+            System.out.println("8 - Remover cliente da fila");
             System.out.println("0 - Sair");
             System.out.print("Opcao: ");
             opcao = Integer.parseInt(sc.nextLine());
@@ -72,6 +73,12 @@ public class Main {
 
                 case 7:
                     restaurante.listarReservas();
+                    break;
+
+                case 8:
+                    System.out.print("Nome do cliente a remover: ");
+                    String nomeRem = sc.nextLine();
+                    restaurante.removerDaFila(nomeRem);
                     break;
 
                 case 0:
